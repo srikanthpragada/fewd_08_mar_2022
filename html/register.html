@@ -7,13 +7,16 @@
     <h1>Registration</h1>
     <form action="register.aspx">
         <label for="email">Email Address</label> <br/>
-        <input type="email" name="email" id="email" autocomplete="off"  required />
+        <input type="email" name="email" id="email" autocomplete="off" placeholder="email address"  required />
         <p></p>
         <label for="fname">Fullname</label> <br/>
         <input type="text" name="fullname" id="fname" autocomplete="off"  required />
         <p></p>
         <label for="dob">Date of Birth</label> <br/>
         <input type="date" name="dob" id="dob" />
+        <p></p>
+        Gender <input type="radio" name="gender" value="m" checked />Male
+             <input type="radio" name="gender" value="f" />Female
         <p></p>
         <input type="submit" value="Register" />
     </form>
