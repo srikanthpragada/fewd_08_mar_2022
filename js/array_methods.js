@@ -13,3 +13,17 @@ let evennums = a.filter( function(n) {
                          }
                        )
 console.log(evennums)
+
+names = ["Jason", "Andy Hill", "Anders", "John Resig"]
+
+function hasSpace(st) {
+    return  st.includes(" ")
+}
+
+names2 = names.filter(function(v) {
+      return v.includes(" ")
+})
+
+names2 = names.filter(hasSpace)
+console.log(names2)
+

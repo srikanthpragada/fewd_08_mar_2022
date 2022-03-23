@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Langs</title>
+  </head>
+  <body>
+    <h1>Languages</h1>
+    <div id="langs"></div>
+
+    <script>
+      let names = ["Java", "JavaScript", "C#", "Python"];
+
+      let output = "";
+      names.forEach(function (v) {
+        output += v + "<p/><hr />";
+      });
+
+      var langs = document.getElementById("langs");
+      langs.innerHTML = output;
+    </script>
+  </body>
+</html>
