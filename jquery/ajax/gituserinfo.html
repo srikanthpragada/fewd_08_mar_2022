@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git User Info</title>
+    <script src="../jquery-3.6.0.min.js"></script>
+    <script>
+        function getUserInfo() {
+            // hide both info and error
+            $("#info").css("display", "none")
+            $("#error").css("display", "none")
+
+            var name = $("#username").val()
+            $.ajax(
+                {
+                    url: `https://api.github.com/users/${name}`,
+                    method: 'get',
+                    success: (result) => {
+                        $("#name").html(result.name)
+                        $("#company").html(result.company)
+                        $("#followers").html(result.followers)
+                        $("#photo").attr("src", result.avatar_url)
+                        $("#info").css("display", "block")
+                    },
+
+                    error: (error) => {
+                        $("#error").text("Sorry! Username not found!").css("display", "block")
+                    }
+                }
+
+            )
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>GitHub User Info</h1>
+    Username <input type="text" id="username" value="srikanthpragada" />
+    <button onclick="getUserInfo()">Get User Info</button>
+
+    <div id="info" style="display:none">
+        <h3 id="name"></h3>
+        <h4 id="company"></h4>
+        <h4 id="followers"></h4>
+        <img id="photo" style="width:300px;height:400px" />
+    </div>
+
+    <h3 id="error" style="display:none"></h3>
+
+</body>
+
+</html>

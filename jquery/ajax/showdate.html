@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Date Time</title>
+    <script src="../jquery-3.6.0.min.js"></script>
+    <script>
+        function showDateTime() {
+            // Make AJAX request and invoke callback function when result is sent from server 
+            $.get("http://worldclockapi.com/api/json/utc/now", 
+                function(result) {
+                   $("#output").html(result.currentDateTime)
+                }
+            )
+        }
+
+    </script>
+
+</head>
+<body>
+    <h1>Show Date Time</h1>
+    <button onclick="showDateTime()">Show Date Time</button>
+    <h2 id="output">
+
+    </h2>
+</body>
+</html>
