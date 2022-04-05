@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Hello from './basics/Hello'
+import Course from './basics/Course'
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Hello />
+    <Course />
   </React.StrictMode>,
   document.getElementById('root')
 );
