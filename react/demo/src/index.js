@@ -1,12 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
-import Product from './basics/Product'
+import { createRoot } from 'react-dom/client';
+import Todos from './basics/Todos'
 
-ReactDOM.render(
+const container = document.getElementById('root');
+const root = createRoot(container);
+
+root.render(
   <React.StrictMode>
-    <Product name="iPhone 13" price={80000} />
+    <Todos />
   </React.StrictMode>,
-  document.getElementById('root')
 );
- 
