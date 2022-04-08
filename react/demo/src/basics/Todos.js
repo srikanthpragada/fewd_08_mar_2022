@@ -14,6 +14,11 @@ export default function Todos() {
      setTodos( [...todos, todoText] )
   }
 
+  function deleteTodo(idx) {
+      let newTodos = todos.filter( (text, index) => index !== idx)
+      setTodos(newTodos)
+  }
+
   return (
      <>
      <h1>Todos</h1>
@@ -22,7 +27,11 @@ export default function Todos() {
      <p></p>
      <ul>
       {
-         todos.map( text => <li>{text}</li>)
+         todos.map( (text,idx) =>
+          <li key={idx}>
+             {text} 
+             <button onClick={ () => deleteTodo(idx)}>Delete</button> 
+         </li>)
       }
      </ul>
      </>
