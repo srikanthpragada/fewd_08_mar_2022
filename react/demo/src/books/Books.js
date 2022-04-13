@@ -2,6 +2,9 @@ import React from 'react'
 
 import ListBooks from './ListBooks'
 import BookDetails from './BookDetails'
+import AddBook from './AddBook'
+import ListAuthors from './ListAuthors'
+import SearchBooks from './SearchBooks'
 
 import {
     BrowserRouter,
@@ -19,6 +22,9 @@ export default function Books() {
                 <Route path="/" element={<Main />}>
                     <Route index element={<ListBooks />} />
                     <Route path="details/:bookId" element={<BookDetails />} />
+                    <Route path="add" element={<AddBook />} />
+                    <Route path="search" element={<SearchBooks />} />
+                    <Route path="authors" element={<ListAuthors />} />
                     <Route path="*" element={<NotFound />} />
                 </Route>
             </Routes>
@@ -34,6 +40,7 @@ function Main() {
             <nav className="nav navbar-expand-sm bg-danger">
                 <Link className="nav-link text-white" to="/">List Books</Link>
                 <Link className="nav-link text-white" to="/add">Add Book</Link>
+                <Link className="nav-link text-white" to="/search">Search Books</Link>
                 <Link className="nav-link text-white" to="/authors">Authors</Link>
             </nav>
             <Outlet />

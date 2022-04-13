@@ -13,8 +13,9 @@ export default function BookDetails() {
                 setBook(book)
             }
         ) // get
-    }, []
-    )
+    }, [] )
+
+    
     return (
         <>
             <h3>Details of Book </h3>

@@ -21,13 +21,17 @@ export default function ListBooks() {
         ) // get
     }
     function deleteBook(id) {
+        if (! window.confirm("Do you want to delete book?"))
+           return;
+
         $.ajax(
             {
                 url: `${BOOKS_URL}/${id}`,
                 method: 'delete',
                 success: function () {
-                    alert("Book deleted successfully!")
-                    getBooks();
+                    // alert("Book deleted successfully!")
+                    // getBooks();
+                    deleteFromBooks(id)
                 },
                 error: function (error) {
                     console.log(error)
@@ -35,6 +39,10 @@ export default function ListBooks() {
                 }
             }
         )
+    }
+
+    function deleteFromBooks(id) {
+        setBooks( books.filter( (b) => b.id !== id))
     }
 
 
